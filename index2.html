@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的個人網站</title>
+
+    <!-- 基本 CSS 樣式 -->
+    <style>
+        body {
+            font-family: "Microsoft JhengHei", sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff;
+            color: #333;
+        }
+
+        header {
+            background-color: #4682b4;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        nav {
+            background-color: #87cefa;
+            text-align: center;
+            padding: 10px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #333;
+            margin: 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ff4500;
+        }
+
+        main {
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #4682b4;
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* 響應式設計：手機畫面自動調整 */
+        @media (max-width: 600px) {
+            body {
+                background-color: #e6f2ff;
+            }
+            nav {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 標題區 -->
+    <header>
+        <h1>我的個人網頁</h1>
+        <p>歡迎來到我的世界 🌏</p>
+    </header>
+
+    <!-- 導覽列 -->
+    <nav>
+        <a href="#about">關於我</a>
+        <a href="#video">最愛影片</a>
+        <a href="#photo">最愛照片</a>
+        <a href="#chart">統計圖表</a>
+        <a href="#links">同學連結</a>
+    </nav>
+
+    <!-- 主要內容區 -->
+    <main>
+        <!-- 關於我 -->
+        <section id="about">
+            <h2>關於我</h2>
+            <p>大家好，我是某某某，喜歡音樂、程式設計和旅遊。</p>
+        </section>
+
+        <!-- 最愛影片 -->
+        <section id="video">
+            <h2>我最喜歡的影片</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jKBlSNiCvRE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </section>
+
+        <!-- 最愛照片 -->
+        <section id="photo">
+            <h2>我最喜歡的照片</h2>
+            <img src="https://picsum.photos/400/250" alt="隨機照片">
+        </section>
+
+        <!-- JavaScript 統計圖表 -->
+        <section id="chart">
+            <h2>統計圖表</h2>
+            <canvas id="myChart" width="300" height="200"></canvas>
+        </section>
+
+        <!-- 同學網站連結 -->
+        <section id="links">
+            <h2>同學的網站</h2>
+            <p>
+                <a href="https://example1.com" target="_blank">同學 A</a> |
+                <a href="https://example2.com" target="_blank">同學 B</a> |
+                <a href="https://example3.com" target="_blank">同學 C</a>
+            </p>
+        </section>
+    </main>
+
+    <!-- 頁尾 -->
+    <footer>
+        <p>© 2025 我的個人網站</p>
+    </footer>
+
+    <!-- JavaScript 加上統計圖表 -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['HTML', 'CSS', 'JavaScript'],
+                datasets: [{
+                    label: '我學會的程度',
+                    data: [90, 80, 70],
+                    backgroundColor: ['#ff9999', '#99ccff', '#99ff99']
+                }]
+            }
+        });
+    </script>
+</body>
+</html>
